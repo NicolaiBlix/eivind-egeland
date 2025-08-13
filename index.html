@@ -4,48 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fotograf – Portefølje</title>
-  <meta name="description" content="Enkel portefølje for fotograf." />
-  <link rel="preload" as="image" href="assets/cover.jpg">
+  <meta name="description" content="Minimal portefølje. Hvit bakgrunn, store bilder, 64px mellomrom." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="wrap">
-    <h1>Navn Navnesen</h1>
-    <p class="tagline">Fotograf – portefølje</p>
-  </header>
-
   <main class="wrap">
-    <section aria-labelledby="galleri-tittel">
-      <h2 id="galleri-tittel">Galleri</h2>
-      <div class="grid">
-        <!-- Bytt ut src/alt med ekte bilder -->
-        <a href="assets/1.jpg"><img loading="lazy" src="assets/1.jpg" alt="Serie 1 – motivbeskrivelse"></a>
-        <a href="assets/2.jpg"><img loading="lazy" src="assets/2.jpg" alt="Serie 2 – motivbeskrivelse"></a>
-        <a href="assets/3.jpg"><img loading="lazy" src="assets/3.jpg" alt="Serie 3 – motivbeskrivelse"></a>
-        <a href="assets/4.jpg"><img loading="lazy" src="assets/4.jpg" alt="Serie 4 – motivbeskrivelse"></a>
-      </div>
-    </section>
+    <!-- Legg til/ta bort <figure> per bilde. Bytt src/alt. -->
+    <figure class="shot">
+      <img src="assets/1.jpg" alt="Prosjekt 1" loading="lazy" decoding="async">
+      <figcaption></figcaption>
+    </figure>
 
-    <section aria-labelledby="om-tittel">
-      <h2 id="om-tittel">Om</h2>
-      <p>Kort bio om fotografen. Fokus på stil, oppdrag og tilgjengelighet.</p>
-    </section>
+    <figure class="shot">
+      <img src="assets/2.jpg" alt="Prosjekt 2" loading="lazy" decoding="async">
+      <figcaption></figcaption>
+    </figure>
 
-    <section aria-labelledby="kontakt-tittel">
-      <h2 id="kontakt-tittel">Kontakt</h2>
-      <ul class="kontakt">
-        <li><a href="mailto:foto@example.com">foto@example.com</a></li>
-        <li><a href="https://www.instagram.com/bruker">Instagram</a></li>
-      </ul>
-    </section>
+    <figure class="shot">
+      <img src="assets/3.jpg" alt="Prosjekt 3" loading="lazy" decoding="async">
+      <figcaption></figcaption>
+    </figure>
+
+    <!-- Kopiér blokken over for flere bilder -->
   </main>
-
-  <footer class="wrap footer">
-    © <span id="year"></span> Navn Navnesen
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
