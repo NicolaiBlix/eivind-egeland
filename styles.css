@@ -1,58 +1,42 @@
-:root {
-  --blue: #0a3d91; /* rolig blå */
-  --ink: #eaf2ff;  /* lys tekst på blå */
-  --ink-muted: #cfe0ff;
-  --maxw: 1000px;
+:root{
+  --gap: 64px;     /* eksakt avstand mellom bilder */
+  --maxw: 1200px;  /* innholdsbredde */
 }
 
-* { box-sizing: border-box; }
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
 
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: var(--blue);      /* BLÅ BAKGRUNN */
-  color: var(--ink);
+body{
+  margin:0;
+  background:#fff;            /* hvit bakgrunn */
+  color:#111;
+  font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
-.wrap {
+.wrap{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px;
-}
-
-h1, h2 { margin: 0 0 8px; }
-.tagline { color: var(--ink-muted); margin: 4px 0 0 0; }
-
-.grid {
+  padding: 24px 16px;         /* litt sidepadding på mobil */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin: 16px 0 24px;
-}
-@media (min-width: 760px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 1040px) {
-  .grid { grid-template-columns: repeat(4, 1fr); }
+  row-gap: var(--gap);        /* 64px mellom hver figure */
 }
 
-.grid img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-  transition: transform .12s ease;
+@media (min-width: 768px){
+  .wrap{ padding: 48px 32px; }
 }
-.grid a:focus img, .grid a:hover img { transform: scale(1.01); }
-
-.kontakt { list-style: none; padding: 0; margin: 8px 0 0; }
-.kontakt a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+@media (min-width: 1200px){
+  .wrap{ padding: 64px; }     /* matcher “64px” feel på store skjermer */
 }
 
-.footer { color: var(--ink-muted); border-top: 1px solid rgba(255,255,255,.15); margin-top: 24px; }
+.shot{
+  margin:0;
+}
+
+.shot img{
+  display:block;
+  width:100%;
+  height:auto;                /* responsivt */
+}
+
+/* Valgfritt: skjul tomme bildetekster */
+.shot figcaption:empty{ display:none; }
